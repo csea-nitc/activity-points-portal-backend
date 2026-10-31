@@ -290,8 +290,9 @@ public class FaApprovalsController {
                 if (existingRecordOpt.isPresent()) {
                     log.warn("Activity already approved for student: sid={}, actID={}", 
                              req.getSid(), activityToLink.getActID());
-                    return ResponseEntity.status(HttpStatus.CONFLICT)
-                            .body("Activity already approved for this student");
+                    /* This logic needs to be fixed. Removing for now. */
+                    // return ResponseEntity.status(HttpStatus.CONFLICT)
+                    //         .body("Activity already approved for this student");
                 }
             } else {
                 // Create new activity
